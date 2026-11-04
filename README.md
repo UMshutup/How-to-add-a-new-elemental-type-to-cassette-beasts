@@ -121,6 +121,18 @@ Now export the file as spritesheet, use these settings for each page
 
 Now import in godot in your mod folder the resulting .png and .json files.
 
+(Stop skipping)
+
+In res://data/decoys/ duplicate a wall and leave there the duplicate (remember to add it to metadata.tres) and change these settings:
+- **Name**: Self explanatory
+- **Sprite**: Drag here the wall.json
+- **Spawn and Despawn sounds**: the sound that the wall makes when spawning and despawning
+- **Icon**: Self explanatory
+- **Elemental type**: Drag here your custom type
+
+And now, the wall should work, even with the elemental wall move!
+
+
 
 
 
