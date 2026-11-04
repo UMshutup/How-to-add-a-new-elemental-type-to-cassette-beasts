@@ -16,7 +16,7 @@ Before making the mod, be sure to download these two mods and put them in your r
 - [Modded type chart fix](https://github.com/UMshutup/modded_type_chart)
 
 ## Making the type
-Before you start, be sure to have these things:
+Before you start, be sure to have these things in the folder of your mod:
 - An icon for the elemental type
 - A palette for the elemental type
 - A palette for elemental effects
@@ -44,6 +44,11 @@ Now its time to make it unique, heres what you should add for each value:
 - **Attacker**: The type of the attacker (in other words who deals damage). Drag the elemental type from the types folder here.
 - **Defender**: The type of the defender (in other words who takes damage). Drag the elemental type from the types folder here.
 - **Result**: This is an array of Status effects that will be added to the defender after an attack, you can put as many as you want, just don't confuse a move resource with a status effect (you can find status effects here: res://data/status_effects/)
-- 
+- **Varied result amount**: this is an array of numbers, each corresponding to the status effect, it will change the amount of the stat randmly by that number
+- **Default result amount**: this will determine the amount of turns the status effects will last
+- **Result hint**: This is the color of the hint for the reaction, "negative" is red and used for debuffs, "transmutation" is used for type changes and neutral effects, "positive" is for buffs
+- **Toast message**: This is the little text that appears above a character when getting hit by an elemental reaction
+
+Now repeat this step until you are happy with all the reactions!
 
 
