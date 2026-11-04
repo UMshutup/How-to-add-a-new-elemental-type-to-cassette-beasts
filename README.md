@@ -9,7 +9,7 @@ This guide currently covers:
 - [How to add a simple custom type](#making-the-type).
 - [How to add elemental reactions](#adding-the-reactions).
 - [How to fix issues due to the new type](#fixing-bugs).
-- [How to add elemental hit effects](#adding-the-reactions).
+- [How to add new status effects](#adding-status-effects).
 
 ### Needed mods
 Before making the mod, be sure to download these two mods and put them in your res://mods folder (**not as a .pkg file!!!!**)
@@ -87,11 +87,25 @@ Now heres the same thing but for vfx, using The sword fusion power (res://data/a
 
 Do the same for res://data/attack_vfx/fusion_axe.tres
 
-## Adding new status effects
+## Adding status effects
 Due to how cassette beasts handles some moves its necessary to add three status effects for each type
 - a new coating
 - a new wall
 - a new contact damage
 
-Locate the status effect folder (res://data/status_effects/):
+Locate the status effect folder (res://data/status_effects/) and duplicate a coating, a wall and a contact damage
+For everyone of them, locate in the inspector and change only these values:
+- **Name**: the status effect name
+- **Tags**: the move tags, cassette beasts handles what moves go on specific beasts by using tags, you can find them (here)[https://wiki.cassettebeasts.com/wiki/Category:Move_Tags]
+- **Icon**: self explanatory
+
+For a coating, change these values:
+- **Elemental types**: drag here your custom type, this will make the monster turn into that type when the status effect is applied
+Then go to res://data/battle_moves/coating_elemental.tres, and add to type cases the type id and the coating.tres of the new type
+
+For contact damage, change these values:
+- **Damage Type**: the type of damage it will deal, drag your custom type here.
+
+For walls, this is a little harder! Especially if you want a custom appearance...
+
 
