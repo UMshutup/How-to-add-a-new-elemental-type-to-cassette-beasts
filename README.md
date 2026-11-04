@@ -5,10 +5,10 @@ This guide assumes you already read the [Cassette Beasts developer guide](https:
 Note that this way of making a modded type is **NOT SAFE TO REMOVE** at all, due to changing some files directly.
 
 This guide currently covers:
-- [How to add a simple custom type](#making_the_type).
-- [How to add elemental reactions](#adding_the_reactions).
-- [How to add elemental hit effects](#adding_the_reactions).
-- [How to fix issues due to the new type](#fixing_bugs).
+- How to add a simple custom type: [Link Text](#making_the_type).
+- How to add elemental reactions: [Link Text](#adding_the_reactions).
+- How to add elemental hit effects: [Link Text](#adding_the_reactions).
+- How to fix issues due to the new type: [Link Text](#fixing_bugs).
 
 ### Needed mods
 Before making the mod, be sure to download these two mods and put them in your res://mods folder (**not as a .pkg file!!!!**)
@@ -22,6 +22,15 @@ Before you start, be sure to have these things:
 - A palette for elemental effects
 
 Now, in the godot editor, go to the elemental types folder (res://data/elemental_types/), you should see all the elemental types in the game.
-Adding a new type, for now, is pretty simple: just duplicate any existsing type, rename it how you want and double click it, on the inspector you should see this:
+Adding a new type, for now, is pretty simple: just duplicate any existing type, rename it how you want and double click on it, on the inspector you should see this:
 
 <img width="439" height="302" alt="tutorial 1" src="https://github.com/user-attachments/assets/4cd2446c-e318-4f51-ab4a-edcbe2089a4f" />
+
+Now its time to make it a different type, heres what you should do to each value:
+- **ID**: The unique identifier of your custom type, it has to be different to the other types, use only lowercase letters.
+- **NAME**: The in-game name, you can use a normal string (just write the name) or you can use translation strings.
+- **Sort order**: This makes the type have priority in the type chart instead of being in alphabetical order, all types besides glass and glitter are 0, glass is 1 and glitter is 2, if you want your type to be after the common types make this number higher.
+- **Palette**: This will determine the colors a bootleg will have if its your new elemental type, be sure to use 5 gradient colors, from darker to lighter (if you want, you can add additional 5 types to change another color in a bootleg monster!)
+- **VFX palette**: Same as the Palette, but this time its used for the vfx of typeless moves (such as spit), it uses 4 colors.
+- **Sparkle**: This adds the same shader that glitter has to the palette
+- **Loot table**, Leave this empty!
