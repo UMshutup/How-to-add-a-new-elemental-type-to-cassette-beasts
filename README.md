@@ -108,5 +108,19 @@ For contact damage, change these values:
 then go to res://data/battle_moves/sharp_edges.tres and change Damage on contact statuses by adding your type id and the status effect.
 
 For walls, this is a little harder! Especially if you want a custom appearance...
-In the github theres should be a .ase file that is a template
+
+(skip this if you want to use a existing wall sprite)
+In the github theres should be a .ase file that is a template and one that i used for my custom wall. 
+
+Draw the frames and be free to edit the amount of frames per tag, BUT do **NOT** delete the tags! they are important for the game to handle the animations.
+
+Now export the file as spritesheet, use these settings for each page
+<img width="612" height="278" alt="image" src="https://github.com/user-attachments/assets/9886a26e-4477-40c1-8747-ccaaf705caa8" />
+<img width="609" height="286" alt="image" src="https://github.com/user-attachments/assets/35b3d4e3-6c33-47b1-ae43-b7cf3346bae9" />
+<img width="593" height="336" alt="image" src="https://github.com/user-attachments/assets/d6a01fcb-b5b8-4714-bd08-d591ffbd156d" />
+
+Now import in godot in your mod folder the resulting .png and .json files.
+
+
+
 
