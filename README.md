@@ -109,7 +109,8 @@ then go to res://data/battle_moves/sharp_edges.tres and change Damage on contact
 
 For walls, this is a little harder! Especially if you want a custom appearance...
 
-(skip this if you want to use a existing wall sprite)
+----(skip this if you want to use a existing wall sprite)------------------------------
+
 In the github theres should be a .ase file that is a template and one that i used for my custom wall. 
 
 Draw the frames and be free to edit the amount of frames per tag, BUT do **NOT** delete the tags! they are important for the game to handle the animations.
@@ -121,7 +122,7 @@ Now export the file as spritesheet, use these settings for each page
 
 Now import in godot in your mod folder the resulting .png and .json files.
 
-(Stop skipping)
+----(Stop skipping)-------------------------------------------------------------------
 
 In res://data/decoys/ duplicate a wall and leave there the duplicate (remember to add it to metadata.tres) and change these settings:
 - **Name**: Self explanatory
@@ -132,7 +133,28 @@ In res://data/decoys/ duplicate a wall and leave there the duplicate (remember t
 
 And now, the wall should work, even with the elemental wall move!
 
+...But not with the move throw...
 
+Lets do this last fix and then lets go to the testing phase.
 
+Go to res://data/attack_vfx/throw_projectile.tres and add to type cases:
+- type id
+- a random throw_type.tres
 
+I won't cover how to add visual effects... yet, maybe in the future, but for now, lets add a pre-made-one
+
+## Testing the type
+Finally, we added a type, if the game on launch does not crash we can start to test the type.
+- before entering a save MAKE A BACKUP FOR IT! Save files can be found here: C:\Users\User\AppData\Roaming\CassetteBeasts
+- in the save press ctrl and type "cheats" in the title screen, this will give us cheats.
+- Press F1 and type in the console: "give_tape (monster_name) (type_id), this will give you a bootleg of your custom type!
+
+Now you can finally test the type interactions!
+
+## Final things
+I will update this guide to add custom moves and vfx.
+If the guide dosen't work, check the whole guide again and then make an issue here on github.
+Lastly, a thanks to the cassette beasts discord server, that had a lot of info and nice people that helped me to add new content in the game, look there for help if you encounter some problems
+
+Now... go Mod the game!
 
