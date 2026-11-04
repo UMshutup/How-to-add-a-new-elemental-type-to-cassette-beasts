@@ -5,15 +5,21 @@ This guide assumes you already read the [Cassette Beasts developer guide](https:
 Note that this way of making a modded type is **NOT SAFE TO REMOVE** at all, due to changing some files directly.
 
 This guide currently covers:
+- [How to add files that are not in the mod folder in your mod](#metadata-inclusion).
 - [How to add a simple custom type](#making-the-type).
 - [How to add elemental reactions](#adding-the-reactions).
-- [How to add elemental hit effects](#adding-the-reactions).
 - [How to fix issues due to the new type](#fixing-bugs).
+- [How to add elemental hit effects](#adding-the-reactions).
 
 ### Needed mods
 Before making the mod, be sure to download these two mods and put them in your res://mods folder (**not as a .pkg file!!!!**)
 - [Mod utils](https://github.com/Yukitty/CassetteBeasts-modutils)
 - [Modded type chart fix](https://github.com/UMshutup/modded_type_chart)
+
+## Metadata inclusion
+**EVERY** file you add outside the mod folder are required to have their path referenced in the metadata.tres of your mod, otherwise it will work only in the editor.
+<img width="437" height="229" alt="image" src="https://github.com/user-attachments/assets/c90dd998-ac46-4943-a12d-cfd6dfeb6564" />
+This includes all of the types and elemental reactions and modified files outside the folder.
 
 ## Making the type
 Before you start, be sure to have these things in the folder of your mod:
@@ -35,6 +41,8 @@ Now its time to make it a different type, heres what you should do to each value
 - **Sparkle**: This adds the same shader that glitter has to the palette
 - **Loot table**, Leave this empty!
 
+Be sure to add the file path in the metadata.tres!
+
 ## Adding the reactions
 Now, this part is a little tedious as every reaction needs its own file.
 Go to the elemental reactions folder (res://data/elemental_reactions/) and duplicate any file, for the name you should put **mod_** at the start to avoid losing track of them.
@@ -50,5 +58,10 @@ Now its time to make it unique, heres what you should add for each value:
 - **Toast message**: This is the little text that appears above a character when getting hit by an elemental reaction
 
 Now repeat this step until you are happy with all the reactions!
+Be sure to add the files paths in the metadata.tres!
 
+## Fixing bugs
+Now, due to how Cassette beasts handles type variations in certain moves, you will have to add your own variations... You can either add new vfx for each type in some moves or re-use existing types of vfx.
 
+Heres an example, using the fusion power move (found here res://data/battle_moves/fusion_power.tres):
+- 
