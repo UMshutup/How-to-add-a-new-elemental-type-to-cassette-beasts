@@ -18,7 +18,9 @@ Before making the mod, be sure to download these two mods and put them in your r
 
 ## Metadata inclusion
 **EVERY** file you add outside the mod folder are required to have their path referenced in the metadata.tres of your mod, otherwise it will work only in the editor.
+
 <img width="437" height="229" alt="image" src="https://github.com/user-attachments/assets/c90dd998-ac46-4943-a12d-cfd6dfeb6564" />
+
 This includes all of the types and elemental reactions and modified files outside the folder.
 
 ## Making the type
@@ -48,6 +50,7 @@ Now, this part is a little tedious as every reaction needs its own file.
 Go to the elemental reactions folder (res://data/elemental_reactions/) and duplicate any file, for the name you should put **mod_** at the start to avoid losing track of them.
 Heres what it should look like in the inspector:
 <img width="436" height="257" alt="tutorial 3" src="https://github.com/user-attachments/assets/d7f07e0b-b13d-4243-8b40-e48ba3b7035c" />
+
 Now its time to make it unique, heres what you should add for each value:
 - **Attacker**: The type of the attacker (in other words who deals damage). Drag the elemental type from the types folder here.
 - **Defender**: The type of the defender (in other words who takes damage). Drag the elemental type from the types folder here.
@@ -63,5 +66,32 @@ Be sure to add the files paths in the metadata.tres!
 ## Fixing bugs
 Now, due to how Cassette beasts handles type variations in certain moves, you will have to add your own variations... You can either add new vfx for each type in some moves or re-use existing types of vfx.
 
-Heres an example, using the fusion power move (found here res://data/battle_moves/fusion_power.tres):
-- 
+Heres an example, using the fusion power move, to avoid a crash when generating the name (found here res://data/battle_moves/fusion_power.tres):
+
+First, doubleclick fusion_power.tres and find this array (Name prefixes):
+<img width="821" height="295" alt="image" src="https://github.com/user-attachments/assets/816750f8-5791-43c3-9886-1a75709ce650" />
+
+Now exand it and you will see every type variation for the name prefix
+
+At the bottom you should find two new slots, click the pencil icon on the left to add a data type:
+- in the first, add a string, and **Name it with the id of your type!**
+- in the second add a "PoolStringArray", and fill it with name prefixes for the fusion move
+
+**DONT FORGET TO CLICK ADD VALUE! OTHERWISE IT WILL NOT ADD IT!**
+
+Now heres the same thing but for vfx, using The sword fusion power (res://data/attack_vfx/fusion_sword.tres)
+- Find this array (Type cases):
+- In the first, use string and add the Type id
+- In the second, use "Object" and add a VFX .tres file, lets just use a pre-existing one for now. (res://data/attack_vfx/fusion_sword_metal.tres)
+**DONT FORGET TO CLICK ADD VALUE! OTHERWISE IT WILL NOT ADD IT!**
+
+Do the same for res://data/attack_vfx/fusion_axe.tres
+
+## Adding new status effects
+Due to how cassette beasts handles some moves its necessary to add three status effects for each type
+- a new coating
+- a new wall
+- a new contact damage
+
+Locate the status effect folder (res://data/status_effects/):
+
