@@ -5,10 +5,10 @@ This guide assumes you already read the [Cassette Beasts developer guide](https:
 Note that this way of making a modded type is **NOT SAFE TO REMOVE** at all, due to changing some files directly.
 
 This guide currently covers:
-- How to add a simple custom type: [Link Text](#making_the_type).
-- How to add elemental reactions: [Link Text](#adding_the_reactions).
-- How to add elemental hit effects: [Link Text](#adding_the_reactions).
-- How to fix issues due to the new type: [Link Text](#fixing_bugs).
+- [How to add a simple custom type](#making-the-type).
+- [How to add elemental reactions](#adding-the-reactions).
+- [How to add elemental hit effects](#adding-the-reactions).
+- [How to fix issues due to the new type](#fixing-bugs).
 
 ### Needed mods
 Before making the mod, be sure to download these two mods and put them in your res://mods folder (**not as a .pkg file!!!!**)
@@ -34,3 +34,16 @@ Now its time to make it a different type, heres what you should do to each value
 - **VFX palette**: Same as the Palette, but this time its used for the vfx of typeless moves (such as spit), it uses 4 colors.
 - **Sparkle**: This adds the same shader that glitter has to the palette
 - **Loot table**, Leave this empty!
+
+## Adding the reactions
+Now, this part is a little tedious as every reaction needs its own file.
+Go to the elemental reactions folder (res://data/elemental_reactions/) and duplicate any file, for the name you should put **mod_** at the start to avoid losing track of them.
+Heres what it should look like in the inspector:
+<img width="436" height="257" alt="tutorial 3" src="https://github.com/user-attachments/assets/d7f07e0b-b13d-4243-8b40-e48ba3b7035c" />
+Now its time to make it unique, heres what you should add for each value:
+- **Attacker**: The type of the attacker (in other words who deals damage). Drag the elemental type from the types folder here.
+- **Defender**: The type of the defender (in other words who takes damage). Drag the elemental type from the types folder here.
+- **Result**: This is an array of Status effects that will be added to the defender after an attack, you can put as many as you want, just don't confuse a move resource with a status effect (you can find status effects here: res://data/status_effects/)
+- 
+
+
