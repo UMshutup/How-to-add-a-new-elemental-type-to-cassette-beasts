@@ -96,7 +96,7 @@ Due to how cassette beasts handles some moves its necessary to add three status 
 Locate the status effect folder (res://data/status_effects/) and duplicate a coating, a wall and a contact damage
 For everyone of them, locate in the inspector and change only these values:
 - **Name**: the status effect name
-- **Tags**: the move tags, cassette beasts handles what moves go on specific beasts by using tags, you can find them (here)[https://wiki.cassettebeasts.com/wiki/Category:Move_Tags]
+- **Tags**: the move tags, cassette beasts handles what moves go on specific beasts by using tags, you can find them [here](https://wiki.cassettebeasts.com/wiki/Category:Move_Tags)
 - **Icon**: self explanatory
 
 For a coating, change these values:
@@ -105,7 +105,8 @@ Then go to res://data/battle_moves/coating_elemental.tres, and add to type cases
 
 For contact damage, change these values:
 - **Damage Type**: the type of damage it will deal, drag your custom type here.
+then go to res://data/battle_moves/sharp_edges.tres and change Damage on contact statuses by adding your type id and the status effect.
 
 For walls, this is a little harder! Especially if you want a custom appearance...
-
+In the github theres should be a .ase file that is a template
 
